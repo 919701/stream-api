@@ -58,7 +58,7 @@ public class Main {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
         System.out.println("\nTask #3 - Select all animals over 30 years old " +
-                "and display all countries of origin without duplicates starting with \"A\"\n");
+                "and display all countries of origin without duplicates starting with \"A\"");
 
         final int BY_AGE = 30;
         final char BY_FIRST_CHAR = 'A';
@@ -78,7 +78,7 @@ public class Main {
     private static void task4() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
-        System.out.println("\nTask number 4 - Count the number of all animals of gender = Female. Output to console.\n");
+        System.out.println("\nTask number 4 - Count the number of all animals of gender = Female. Output to console.");
 
         final String BY_GENDER = "Female";
         long count = animals.stream()
@@ -88,9 +88,27 @@ public class Main {
 
     }
 
+    /*
+    Задача №5 - Взять всех животных возрастом 20 - 30 лет.
+    Есть ли среди них хоть один из страны Венгрия (Hungarian)?
+    Ответ вывести в консоль.
+     */
     private static void task5() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
+        System.out.println("\nTask number 5 - Take all animals aged 20 - 30 years. " +
+                "Are there any of them from Hungary (Hungarian)?" +
+                "Output the answer to the console.");
+
+        final String BY_ORIGIN = "Hungarian";
+        final int MIN_AGE = 20;
+        final int MAX_AGE = 30;
+
+        boolean isOrigin = animals.stream()
+                .filter(x -> x.getAge() >= MIN_AGE && x.getAge() <= MAX_AGE)
+                .allMatch(x -> x.getOrigin().toUpperCase().equals(BY_ORIGIN.toUpperCase()));
+
+        System.out.printf("In this country '%s' animals between %d and %d age : %b", BY_ORIGIN, MIN_AGE, MAX_AGE, isOrigin);
     }
 
     private static void task6() throws IOException {
