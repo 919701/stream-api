@@ -6,8 +6,8 @@ import by.sergeev.util.Util;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
-import java.util.OptionalInt;
+
+import static java.lang.System.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -38,19 +38,16 @@ public class Main {
      */
     private static void task1() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
-        System.out.println("\n\nTask number 1 - From the presented animals, " +
-                "select all young individuals from 10 to 20 years old and sort by age (in ascending order)," +
-                " then distribute 7 for each zoo. An unlimited number of zoos, and you are the director of the 3rd zoo " +
-                "in a row. Output the received animals to the console.");
         final int MIN_AGE = 10;
         final int MAX_AGE = 20;
+
+        out.println("\n\nTask 1:");
         animals.stream()
                 .filter(x -> x.getAge() >= MIN_AGE && x.getAge() < MAX_AGE)
-                    .sorted(Comparator.comparing(Animal::getAge))
+                .sorted(Comparator.comparing(Animal::getAge))
                 .skip(14)
                 .limit(7)
-                .forEach(System.out::println);
+                .forEach(out::println);
     }
 
     /*
@@ -59,19 +56,16 @@ public class Main {
      */
     private static void task2() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
-        System.out.println("\n\nTask number 2 - Select all animals from Japan (Japanese) " +
-                "and write the breed UPPER_CASE if the gender is Female, 7" +
-                "convert to animal breed strings and output to the console");
-
         final String BY_ORIGIN = "Japanese";
         final String BY_GENDER = "Female";
+
+        out.println("\n\nTask 2:");
 
         animals.stream()
                 .filter(x -> x.getOrigin().equalsIgnoreCase(BY_ORIGIN))
                 .filter(x -> x.getGender().equalsIgnoreCase(BY_GENDER))
                 .peek(x -> x.setBread(x.getBread().toUpperCase()))
-                .forEach(System.out::println);
+                .forEach(out::println);
     }
 
     /*
@@ -79,12 +73,10 @@ public class Main {
      */
     private static void task3() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
-        System.out.println("\n\nTask #3 - Select all animals over 30 years old " +
-                "and display all countries of origin without duplicates starting with \"A\"");
-
         final int BY_AGE = 30;
         final char BY_FIRST_CHAR = 'A';
+
+        out.println("\n\nTask 3:");
 
         animals.stream()
                 .filter(x -> x.getAge() > BY_AGE)
@@ -92,7 +84,7 @@ public class Main {
                 .map(x -> x.getOrigin())
                 .distinct()
                 .sorted()
-                .forEach(System.out::println);
+                .forEach(out::println);
     }
 
     /*
@@ -100,14 +92,15 @@ public class Main {
      */
     private static void task4() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
-        System.out.println("\n\nTask number 4 - Count the number of all animals of gender = Female. Output to console.");
-
         final String BY_GENDER = "Female";
+
+        out.println("\n\nTask number 4 - Count the number of all animals of gender = Female. Output to console.");
+
         long count = animals.stream()
                 .filter(x -> x.getGender().equalsIgnoreCase(BY_GENDER))
-                .count();
-        System.out.println("Number of all sex animals " + BY_GENDER + " = " + count);
+                .count()
+                .if;
+        out.println("Number of all sex animals " + BY_GENDER + " = " + count);
 
     }
 
@@ -119,7 +112,7 @@ public class Main {
     private static void task5() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
-        System.out.println("\n\nTask number 5 - Take all animals aged 20 - 30 years. " +
+        out.println("\n\nTask number 5 - Take all animals aged 20 - 30 years. " +
                 "Are there any of them from Hungary (Hungarian)?" +
                 "Output the answer to the console.");
 
@@ -131,7 +124,7 @@ public class Main {
                 .filter(x -> x.getAge() >= MIN_AGE && x.getAge() <= MAX_AGE)
                 .allMatch(x -> x.getOrigin().equalsIgnoreCase(BY_ORIGIN));
 
-        System.out.printf("In this country '%s' animals between %d and %d age : %b", BY_ORIGIN, MIN_AGE, MAX_AGE, isOrigin);
+        out.printf("In this country '%s' animals between %d and %d age : %b", BY_ORIGIN, MIN_AGE, MAX_AGE, isOrigin);
     }
 
     /*
@@ -140,14 +133,14 @@ public class Main {
     private static void task6() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
-        System.out.println("\n\nTask number 6 - Take all the animals. Are they all Male or Female? " +
+        out.println("\n\nTask number 6 - Take all the animals. Are they all Male or Female? " +
                 "Output the answer to the console.");
 
         final boolean isGender = animals.stream()
                 .allMatch(x -> x.getGender().equalsIgnoreCase("Male".toLowerCase())
                         || x.getGender().toLowerCase().equalsIgnoreCase("Female".toLowerCase()));
 
-        System.out.println("Are all animals Male or Female? Answer: " + isGender);
+        out.println("Are all animals Male or Female? Answer: " + isGender);
     }
 
     /*
@@ -157,14 +150,14 @@ public class Main {
     private static void task7() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
-        System.out.println("\n\nTask number 7 - Take all the animals. " +
+        out.println("\n\nTask number 7 - Take all the animals. " +
                 "Find out that none of them have an Oceania country of origin. " +
                 "Output the answer to the console");
 
         final String BY_COUNTRY = "Oceania";
         boolean anyMatchAnimals = animals.stream()
-                .anyMatch(x -> x.getOrigin().equalsIgnoreCase(BY_COUNTRY));
-        System.out.printf("Is there any animal that lives in %s? %b",BY_COUNTRY,anyMatchAnimals);
+                .anyMatch(x -> BY_COUNTRY.equalsIgnoreCase(x.getOrigin()));
+        out.printf("Is there any animal that lives in %s? %b", BY_COUNTRY, anyMatchAnimals);
     }
 
     /*
@@ -174,35 +167,37 @@ public class Main {
     private static void task8() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
-        System.out.println("\n\nTask number 8 - Take all the animals. " +
+        out.println("\n\nTask number 8 - Take all the animals. " +
                 "Sort their breed in standard order and take the first 100. " +
                 "Print the age of the oldest animal to the console.");
 
         final int COUNT = 100;
 
-        int oldAnimal = animals.stream()
-                .sorted((o1, o2) -> o1.getBread().compareTo(o2.getBread()))
+        animals.stream()
+                .sorted(Comparator.comparing(Animal::getBread))
                 .limit(100)
                 .mapToInt(Animal::getAge)
-                .max().getAsInt();
-
-        System.out.printf("Age of oldest animal = %d",oldAnimal);
-
+                .max()
+                .ifPresent(age -> out.printf("Age of oldest animal = %d", age));
     }
 
     /*
-    Задача №9 - Взять всех животных. Преобразовать их в породы, а породы в []char. Вывести в консоль длину самого короткого массива.
+    Задача №9 - Взять всех животных. Преобразовать их в породы, а породы в []char.
+    Вывести в консоль длину самого короткого массива.
      */
     private static void task9() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
-        System.out.println("\n\nTask number 9 - Take all the animals." +
+        out.println("\n\nTask number 9 - Take all the animals." +
                 " Convert them to breeds, and breeds to []char. " +
                 "Print the length of the shortest array to the console.");
 
-//        animals.stream()
-//                .flatMap(x->Character)
-//                .forEach(System.out::println);
+        animals.stream()
+                .map(Animal::getBread)
+                .map(String::toCharArray)
+                .min(Comparator.comparing(ch -> ch.length))
+                .ifPresent(ch -> out.println("Length of the shortest array: " + ch.length));
+
     }
 
     /*
@@ -211,14 +206,14 @@ public class Main {
     private static void task10() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
-        System.out.println("\n\nTask number 10 - Take all the animals. " +
+        out.println("\n\nTask number 10 - Take all the animals. " +
                 "Calculate the total age of all animals. " +
                 "Print the result to the console.");
 
-        long sumAge =  animals.stream()
+        long sumAge = animals.stream()
                 .mapToLong(Animal::getAge)
                 .sum();
-        System.out.printf("The total age of all animals = %d age",sumAge);
+        out.printf("The total age of all animals = %d age", sumAge);
     }
 
     /*

@@ -1,10 +1,7 @@
 package by.sergeev.util;
 
-import by.sergeev.model.Animal;
-import by.sergeev.model.Car;
-import by.sergeev.model.Flower;
-import by.sergeev.model.House;
-import by.sergeev.model.Person;
+
+import by.sergeev.model.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,6 +14,9 @@ import java.util.List;
 import java.util.Locale;
 
 public class Util {
+    private Util() {
+        throw new IllegalStateException("Utility class");
+    }
     public static final String ANIMALS_DATA_FILE_NAME = "src/main/resources/animals.json";
     public static final String RECRUITS_DATA_FILE_NAME = "src/main/resources/recruits.json";
     public static final String CARS_DATA_FILE_NAME = "src/main/resources/cars.json";

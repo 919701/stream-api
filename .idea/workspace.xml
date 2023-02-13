@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: Finished TASK 1">
+    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: new Task">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/util/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +54,12 @@
     </system>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LczOx99wbaxlrJCyu44WTNzBap" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -66,20 +72,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Clevertec/Tasks/Stream",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Clevertec\Tasks\Stream" />
-    </key>
-  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="by.sergeev.Main" />
@@ -94,7 +90,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Stream [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="stream-api [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -115,14 +111,31 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="stream-api-1.0.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/stream-api-1.0.jar" />
+    <configuration name="stream-api [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.stream-api-1.0.jar" />
-        <item itemvalue="Gradle.Stream [assemble]" />
+        <item itemvalue="Gradle.stream-api [build]" />
+        <item itemvalue="Gradle.stream-api [assemble]" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -136,95 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676185131249</updated>
       <workItem from="1676185135661" duration="72000" />
-      <workItem from="1676259792883" duration="124000" />
-      <workItem from="1676259925011" duration="1252000" />
-      <workItem from="1676261220804" duration="26880000" />
     </task>
-    <task id="LOCAL-00001" summary="feat: Add Task 3">
-      <created>1676265777913</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1676265777913</updated>
-    </task>
-    <task id="LOCAL-00002" summary="feat: Add Task 3">
-      <created>1676265895110</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1676265895110</updated>
-    </task>
-    <task id="LOCAL-00003" summary="feat: END Task 3">
-      <created>1676267203381</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1676267203381</updated>
-    </task>
-    <task id="LOCAL-00004" summary="feat: END Task 4">
-      <created>1676268028405</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1676268028405</updated>
-    </task>
-    <task id="LOCAL-00005" summary="feat: END Task 5">
-      <created>1676270993662</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1676270993662</updated>
-    </task>
-    <task id="LOCAL-00006" summary="feat: END Task 5 v_2">
-      <created>1676276555780</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1676276555780</updated>
-    </task>
-    <task id="LOCAL-00007" summary="feat: END Task 6">
-      <created>1676276872931</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1676276872931</updated>
-    </task>
-    <task id="LOCAL-00008" summary="feat: END Task 7">
-      <created>1676278956728</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1676278956728</updated>
-    </task>
-    <task id="LOCAL-00009" summary="feat: END Task 8">
-      <created>1676281252278</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1676281252278</updated>
-    </task>
-    <task id="LOCAL-00010" summary="feat: rewrited Animal.toString">
-      <created>1676281607875</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1676281607875</updated>
-    </task>
-    <task id="LOCAL-00011" summary="feat: End TASK 1">
-      <created>1676287649101</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1676287649101</updated>
-    </task>
-    <task id="LOCAL-00012" summary="feat: End TASK 10">
-      <created>1676289705820</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1676289705820</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,18 +168,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: Add Task 3" />
-    <MESSAGE value="feat: END Task 3" />
-    <MESSAGE value="feat: END Task 4" />
-    <MESSAGE value="feat: END Task 5" />
-    <MESSAGE value="feat: END Task 5 v_2" />
-    <MESSAGE value="feat: END Task 6" />
-    <MESSAGE value="feat: END Task 7" />
-    <MESSAGE value="feat: END Task 8" />
-    <MESSAGE value="feat: rewrited Animal.toString" />
-    <MESSAGE value="feat: End TASK 1" />
-    <MESSAGE value="feat: End TASK 10" />
-    <MESSAGE value="feat: Finished TASK 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Finished TASK 1" />
+    <MESSAGE value="feat: new Task" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: new Task" />
   </component>
 </project>
