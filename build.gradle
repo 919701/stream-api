@@ -5,6 +5,9 @@ plugins {
 group 'by.sergeev'
 version '1.0'
 
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
 repositories {
     mavenCentral()
 }
@@ -19,4 +22,15 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': project.name,
+                'Implementation-Version': project.version,
+                'Main-Class': 'by.sergeev.Main',
+                'Class-Path': configurations.compileClasspath.collect { it.getName() }.join(' ')
+    }
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+    from configurations.runtimeClasspath.files.collect { zipTree(it) }
 }
