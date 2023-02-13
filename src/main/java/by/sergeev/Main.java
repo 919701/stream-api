@@ -31,16 +31,15 @@ public class Main {
     }
 
     /*
-    Задача №2 -
-Отобрать всех животных из Японии (Japanese) и записать породу UPPER_CASE в если пол Female
-преобразовать к строкам породы животных и вывести в консоль
+    Задача №2 - Отобрать всех животных из Японии (Japanese) и записать породу UPPER_CASE
+     если пол Female преобразовать к строкам породы животных и вывести в консоль
      */
     private static void task2() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
-        System.out.println("\nЗадача №2 - Отобрать всех животных из Японии (Japanese) " +
-                "и записать породу UPPER_CASE в если пол Female преобразовать к строкам " +
-                "породы животных и вывести в консоль\n");
+        System.out.println("\nTask number 2 - Select all animals from Japan (Japanese) " +
+                "and write the breed UPPER_CASE if the gender is Female, 7" +
+                "convert to animal breed strings and output to the console\n");
 
         final String BY_ORIGIN = "Japanese";
         final String BY_GENDER = "Female";
@@ -53,14 +52,13 @@ public class Main {
     }
 
     /*
-    Задача №3 -
-Отобрать всех животных старше 30 лет и вывести все страны происхождения без дубликатов начинающиеся на "A"
+    Задача №3 - Отобрать всех животных старше 30 лет и вывести все страны происхождения без дубликатов начинающиеся на "A"
      */
     private static void task3() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
-        System.out.println("\nЗадача №3 - Отобрать всех животных старше 30 лет " +
-                "и вывести все страны происхождения без дубликатов начинающиеся на \"A\"\n");
+        System.out.println("\nTask #3 - Select all animals over 30 years old " +
+                "and display all countries of origin without duplicates starting with \"A\"\n");
 
         final int BY_AGE = 30;
         final char BY_FIRST_CHAR = 'A';
@@ -68,15 +66,25 @@ public class Main {
         animals.stream()
                 .filter(x -> x.getAge() > BY_AGE)
                 .filter(x -> x.getOrigin().toUpperCase().charAt(0) == BY_FIRST_CHAR)
-                .map(x->x.getOrigin())
+                .map(x -> x.getOrigin())
                 .distinct()
                 .sorted()
                 .forEach(System.out::println);
     }
 
+    /*
+    Задача №4 - Подсчитать количество всех животных пола = Female. Вывести в консоль
+     */
     private static void task4() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
+        System.out.println("\nTask number 4 - Count the number of all animals of gender = Female. Output to console.\n");
+
+        final String BY_GENDER = "Female";
+        long count = animals.stream()
+                .filter(x -> x.getGender().equals(BY_GENDER))
+                .count();
+        System.out.println("Number of all sex animals " + BY_GENDER + " = " + count);
 
     }
 
