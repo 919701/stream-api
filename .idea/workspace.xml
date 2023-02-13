@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: Finish Task 11">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: Finish Task 12">
       <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/model/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676311723155</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: Finish Task 12">
+      <created>1676317834796</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676317834796</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +190,7 @@
     <MESSAGE value="feat: new Task" />
     <MESSAGE value="feat: Next commit" />
     <MESSAGE value="feat: Finish Task 11" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Finish Task 11" />
+    <MESSAGE value="feat: Finish Task 12" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Finish Task 12" />
   </component>
 </project>
