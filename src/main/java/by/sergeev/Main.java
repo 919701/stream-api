@@ -4,7 +4,9 @@ import by.sergeev.model.*;
 import by.sergeev.util.Util;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -145,11 +147,29 @@ public class Main {
     }
 
     /*
-    Задача №8 - Взять всех животных. Отсортировать их породу в стандартном порядке и взять первые 100. Вывести в консоль возраст самого старого животного
+    Задача №8 - Взять всех животных. Отсортировать их породу в стандартном порядке и взять первые 100.
+    Вывести в консоль возраст самого старого животного.
      */
     private static void task8() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
+        System.out.println("\n\nTask number 8 - Take all the animals. " +
+                "Sort their breed in standard order and take the first 100. " +
+                "Print the age of the oldest animal to the console.");
+
+        final int COUNT = 100;
+//        animals.stream()
+//                .sorted((o1, o2) -> o1.getBread().compareTo(o2.getBread()))
+//                .limit(100)
+//                .sorted(Comparator.comparing(Animal::getAge))
+//                .forEach(System.out::println);
+
+        final Optional<Animal> oldAnimal = animals.stream()
+                .sorted((o1, o2) -> o1.getBread().compareTo(o2.getBread()))
+                .limit(100)
+                .max(Comparator.comparing(Animal::getAge));
+        System.out.println(oldAnimal);
+
     }
 
     /*
