@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -178,19 +179,14 @@ public class Main {
                 "Print the age of the oldest animal to the console.");
 
         final int COUNT = 100;
-//        animals.stream()
-//                .sorted((o1, o2) -> o1.getBread().compareTo(o2.getBread()))
-//                .limit(100)
-//                .sorted(Comparator.comparing(Animal::getAge))
-//                .forEach(System.out::println);
 
-        Optional<Integer> oldAnimal = animals.stream()
+        int oldAnimal = animals.stream()
                 .sorted((o1, o2) -> o1.getBread().compareTo(o2.getBread()))
                 .limit(100)
-                .map(x -> x.getAge())
-                .max(Integer::compareTo);
+                .mapToInt(Animal::getAge)
+                .max().getAsInt();
 
-        System.out.println(oldAnimal);
+        System.out.printf("Age of oldest animal = %d",oldAnimal);
 
     }
 
@@ -215,6 +211,14 @@ public class Main {
     private static void task10() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
+        System.out.println("\n\nTask number 10 - Take all the animals. " +
+                "Calculate the total age of all animals. " +
+                "Print the result to the console.");
+
+        long sumAge =  animals.stream()
+                .mapToLong(Animal::getAge)
+                .sum();
+        System.out.printf("The total age of all animals = %d age",sumAge);
     }
 
     /*

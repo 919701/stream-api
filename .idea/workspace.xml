@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: rewrited Animal.toString">
+    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: End TASK 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" afterDir="false" />
     </list>
@@ -138,7 +138,7 @@
       <workItem from="1676185135661" duration="72000" />
       <workItem from="1676259792883" duration="124000" />
       <workItem from="1676259925011" duration="1252000" />
-      <workItem from="1676261220804" duration="21474000" />
+      <workItem from="1676261220804" duration="23973000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Add Task 3">
       <created>1676265777913</created>
@@ -210,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676281607875</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: End TASK 1">
+      <created>1676287649101</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676287649101</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +245,7 @@
     <MESSAGE value="feat: END Task 7" />
     <MESSAGE value="feat: END Task 8" />
     <MESSAGE value="feat: rewrited Animal.toString" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: rewrited Animal.toString" />
+    <MESSAGE value="feat: End TASK 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: End TASK 1" />
   </component>
 </project>
