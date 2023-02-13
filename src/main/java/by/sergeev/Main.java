@@ -27,9 +27,29 @@ public class Main {
         task15();
     }
 
+    /*
+    Задача №1 - Из представленных животных отобрать все молодые особи от 10 до 20 лет
+     и отсортировать по возрасту (по возрастанию)
+     далее - распределить по 7 на каждый зоопарк.
+     Зоопарков неограниченное кол-во,
+     а вы - директор 3-го по счёту зоопарка.
+     Полученных животных вывести в консоль.
+     */
     private static void task1() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
+        System.out.println("\n\nTask number 1 - From the presented animals, " +
+                "select all young individuals from 10 to 20 years old and sort by age (in ascending order)," +
+                " then distribute 7 for each zoo. An unlimited number of zoos, and you are the director of the 3rd zoo " +
+                "in a row. Output the received animals to the console.");
+        final int MIN_AGE = 10;
+        final int MAX_AGE = 20;
+        animals.stream()
+                .filter(x -> x.getAge() >= MIN_AGE && x.getAge() < MAX_AGE)
+                    .sorted(Comparator.comparing(Animal::getAge))
+                .skip(14)
+                .limit(7)
+                .forEach(System.out::println);
     }
 
     /*
@@ -164,20 +184,29 @@ public class Main {
 //                .sorted(Comparator.comparing(Animal::getAge))
 //                .forEach(System.out::println);
 
-        final Optional<Animal> oldAnimal = animals.stream()
+        Optional<Integer> oldAnimal = animals.stream()
                 .sorted((o1, o2) -> o1.getBread().compareTo(o2.getBread()))
                 .limit(100)
-                .max(Comparator.comparing(Animal::getAge));
+                .map(x -> x.getAge())
+                .max(Integer::compareTo);
+
         System.out.println(oldAnimal);
 
     }
 
     /*
-    Задача №9 - Взять всех животных. Преобразовать их в породы, а породы в []char. Вывести в консоль длину самого короткого массива
+    Задача №9 - Взять всех животных. Преобразовать их в породы, а породы в []char. Вывести в консоль длину самого короткого массива.
      */
     private static void task9() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
+        System.out.println("\n\nTask number 9 - Take all the animals." +
+                " Convert them to breeds, and breeds to []char. " +
+                "Print the length of the shortest array to the console.");
+
+//        animals.stream()
+//                .flatMap(x->Character)
+//                .forEach(System.out::println);
     }
 
     /*
