@@ -124,7 +124,7 @@ public class Main {
                 .allMatch(x -> x.getGender().equalsIgnoreCase("Male".toLowerCase())
                         || x.getGender().toLowerCase().equalsIgnoreCase("Female".toLowerCase()));
 
-        System.out.println("Are all animals Male or Female? Answer: " + isGender); Все ли животные Мужского или Женсколго пола
+        System.out.println("Are all animals Male or Female? Answer: " + isGender);
     }
 
     /*
