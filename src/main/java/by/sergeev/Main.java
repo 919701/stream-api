@@ -4,10 +4,12 @@ import by.sergeev.model.*;
 import by.sergeev.util.Util;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Comparator;
 import java.util.List;
 
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -41,12 +43,7 @@ public class Main {
         final int MAX_AGE = 20;
 
         out.println("\nTask 1:");
-        animals.stream()
-                .filter(x -> x.getAge() >= MIN_AGE && x.getAge() < MAX_AGE)
-                .sorted(Comparator.comparing(Animal::getAge))
-                .skip(14)
-                .limit(7)
-                .forEach(out::println);
+        animals.stream().filter(x -> x.getAge() >= MIN_AGE && x.getAge() < MAX_AGE).sorted(Comparator.comparing(Animal::getAge)).skip(14).limit(7).forEach(out::println);
     }
 
     /*
@@ -61,11 +58,7 @@ public class Main {
 
         out.println("\nTask 2:");
 
-        animals.stream()
-                .filter(x -> BY_ORIGIN.equalsIgnoreCase(x.getOrigin()))
-                .filter(x -> BY_GENDER.equalsIgnoreCase(x.getGender()))
-                .peek(x -> x.setBread(x.getBread().toUpperCase()))
-                .forEach(out::println);
+        animals.stream().filter(x -> BY_ORIGIN.equalsIgnoreCase(x.getOrigin())).filter(x -> BY_GENDER.equalsIgnoreCase(x.getGender())).peek(x -> x.setBread(x.getBread().toUpperCase())).forEach(out::println);
     }
 
     /*
@@ -79,13 +72,7 @@ public class Main {
 
         out.println("\nTask 3:");
 
-        animals.stream()
-                .filter(x -> BY_AGE < x.getAge())
-                .filter(x -> BY_FIRST_CHAR == x.getOrigin().toUpperCase().charAt(0))
-                .map(x -> x.getOrigin())
-                .distinct()
-                .sorted()
-                .forEach(out::println);
+        animals.stream().filter(x -> BY_AGE < x.getAge()).filter(x -> BY_FIRST_CHAR == x.getOrigin().toUpperCase().charAt(0)).map(x -> x.getOrigin()).distinct().sorted().forEach(out::println);
     }
 
     /*
@@ -98,9 +85,7 @@ public class Main {
 
         out.println("\nTask number 4:");
 
-        long count = animals.stream()
-                .filter(x -> BY_GENDER.equalsIgnoreCase(x.getGender()))
-                .count();
+        long count = animals.stream().filter(x -> BY_GENDER.equalsIgnoreCase(x.getGender())).count();
         out.println("Number of all sex animals " + BY_GENDER + " = " + count);
 
     }
@@ -118,9 +103,7 @@ public class Main {
 
         out.println("\nTask number 5:");
 
-        boolean isOrigin = animals.stream()
-                .filter(x -> MIN_AGE <= x.getAge() && MAX_AGE >= x.getAge())
-                .allMatch(x -> x.getOrigin().equalsIgnoreCase(BY_ORIGIN));
+        boolean isOrigin = animals.stream().filter(x -> MIN_AGE <= x.getAge() && MAX_AGE >= x.getAge()).allMatch(x -> x.getOrigin().equalsIgnoreCase(BY_ORIGIN));
 
         out.printf("In this country '%s' animals between %d and %d age : %b\n", BY_ORIGIN, MIN_AGE, MAX_AGE, isOrigin);
     }
@@ -134,9 +117,7 @@ public class Main {
 
         out.println("\nTask number 6:");
 
-        final boolean isGender = animals.stream()
-                .allMatch(x -> "Male".equalsIgnoreCase(x.getGender())
-                        || "Female".equalsIgnoreCase(x.getGender()));
+        final boolean isGender = animals.stream().allMatch(x -> "Male".equalsIgnoreCase(x.getGender()) || "Female".equalsIgnoreCase(x.getGender()));
 
         out.println("Are all animals Male or Female? Answer: " + isGender);
     }
@@ -152,8 +133,7 @@ public class Main {
 
         out.println("\nTask number 7:");
 
-        boolean anyMatchAnimals = animals.stream()
-                .anyMatch(x -> BY_COUNTRY.equalsIgnoreCase(x.getOrigin()));
+        boolean anyMatchAnimals = animals.stream().anyMatch(x -> BY_COUNTRY.equalsIgnoreCase(x.getOrigin()));
 
         out.printf("Is there any animal that lives in %s? %b\n", BY_COUNTRY, anyMatchAnimals);
     }
@@ -169,12 +149,7 @@ public class Main {
 
         out.println("\nTask number 8:");
 
-        animals.stream()
-                .sorted(Comparator.comparing(Animal::getBread))
-                .limit(100)
-                .mapToInt(Animal::getAge)
-                .max()
-                .ifPresent(age -> out.printf("Age of oldest animal = %d\n", age));
+        animals.stream().sorted(Comparator.comparing(Animal::getBread)).limit(100).mapToInt(Animal::getAge).max().ifPresent(age -> out.printf("Age of oldest animal = %d\n", age));
     }
 
     /*
@@ -187,11 +162,7 @@ public class Main {
 
         out.println("\nTask number 9:");
 
-        animals.stream()
-                .map(Animal::getBread)
-                .map(String::toCharArray)
-                .min(Comparator.comparing(ch -> ch.length))
-                .ifPresent(ch -> out.println("Length of the shortest array: " + ch.length));
+        animals.stream().map(Animal::getBread).map(String::toCharArray).min(Comparator.comparing(ch -> ch.length)).ifPresent(ch -> out.println("Length of the shortest array: " + ch.length));
 
     }
 
@@ -203,9 +174,7 @@ public class Main {
         List<Animal> animals = Util.getAnimals();
         out.println("\nTask number 10:");
 
-        long sumAge = animals.stream()
-                .mapToLong(Animal::getAge)
-                .sum();
+        long sumAge = animals.stream().mapToLong(Animal::getAge).sum();
 
         out.printf("The total age of all animals = %d age\n", sumAge);
     }
@@ -220,11 +189,7 @@ public class Main {
 
         out.println("\nTask number 11:");
 
-        animals.stream()
-                .filter(x -> BY_COUNTRY.equalsIgnoreCase(x.getOrigin()))
-                .mapToInt(Animal::getAge)
-                .average()
-                .ifPresent(age->out.printf("Average age of all animals from %s: %.2f\n",BY_COUNTRY,age));
+        animals.stream().filter(x -> BY_COUNTRY.equalsIgnoreCase(x.getOrigin())).mapToInt(Animal::getAge).average().ifPresent(age -> out.printf("Average age of all animals from %s: %.2f\n", BY_COUNTRY, age));
     }
 
     /*
@@ -236,9 +201,19 @@ public class Main {
      */
     private static void task12() throws IOException {
         List<Person> people = Util.getPersons();
-        out.println("\nTask number 12:");
+        final String BY_GENDER = "Male";
+        final int MIN_AGE = 18;
+        final int MAX_AGE = 27;
+        final int COUNT_PERSON = 200;
 
-        out.println("NULL");
+        out.println("\nTask number 12:");
+        people.stream()
+                .filter(p -> BY_GENDER.equalsIgnoreCase(p.getGender()))
+                .filter(age -> MIN_AGE <= ChronoUnit.YEARS.between(age.getDateOfBirth(), LocalDate.now()))
+                .filter(age -> MAX_AGE >= ChronoUnit.YEARS.between(age.getDateOfBirth(), LocalDate.now()))
+                .sorted(Comparator.comparing(Person::getRecruitmentGroup))
+                .limit(COUNT_PERSON)
+                .forEach(out::println);
     }
 
     /*
