@@ -128,11 +128,20 @@ public class Main {
     }
 
     /*
-    Задача №7 -Взять всех животных. Узнать что ни одно из них не имеет страну происхождения Oceania. Ответ вывести в консоль
+    Задача №7 -Взять всех животных. Узнать что ни одно из них
+    не имеет страну происхождения Oceania. Ответ вывести в консоль.
      */
     private static void task7() throws IOException {
         List<Animal> animals = Util.getAnimals();
         //        animals.stream() Продолжить ...
+        System.out.println("\n\nTask number 7 - Take all the animals. " +
+                "Find out that none of them have an Oceania country of origin. " +
+                "Output the answer to the console");
+
+        final String BY_COUNTRY = "Oceania";
+        boolean anyMatchAnimals = animals.stream()
+                .anyMatch(x -> x.getOrigin().equalsIgnoreCase(BY_COUNTRY));
+        System.out.printf("Is there any animal that lives in %s? %b",BY_COUNTRY,anyMatchAnimals);
     }
 
     /*
