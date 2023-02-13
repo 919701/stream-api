@@ -29,11 +29,10 @@ public class Main {
     }
 
     /*
-    Задача №1 - Из представленных животных отобрать все молодые особи от 10 до 20 лет
-     и отсортировать по возрасту (по возрастанию)
-     далее - распределить по 7 на каждый зоопарк.
-     Зоопарков неограниченное кол-во,
-     а вы - директор 3-го по счёту зоопарка.
+    Задача №1
+    - Из представленных животных отобрать все молодые особи от 10 до 20 лет
+     и отсортировать по возрасту (по возрастанию) далее - распределить по 7 на каждый зоопарк.
+     Зоопарков неограниченное кол-во,а вы - директор 3-го по счёту зоопарка.
      Полученных животных вывести в консоль.
      */
     private static void task1() throws IOException {
@@ -41,7 +40,7 @@ public class Main {
         final int MIN_AGE = 10;
         final int MAX_AGE = 20;
 
-        out.println("\n\nTask 1:");
+        out.println("\nTask 1:");
         animals.stream()
                 .filter(x -> x.getAge() >= MIN_AGE && x.getAge() < MAX_AGE)
                 .sorted(Comparator.comparing(Animal::getAge))
@@ -51,7 +50,8 @@ public class Main {
     }
 
     /*
-    Задача №2 - Отобрать всех животных из Японии (Japanese) и записать породу UPPER_CASE
+    Задача №2
+     - Отобрать всех животных из Японии (Japanese) и записать породу UPPER_CASE
      если пол Female преобразовать к строкам породы животных и вывести в консоль
      */
     private static void task2() throws IOException {
@@ -59,28 +59,29 @@ public class Main {
         final String BY_ORIGIN = "Japanese";
         final String BY_GENDER = "Female";
 
-        out.println("\n\nTask 2:");
+        out.println("\nTask 2:");
 
         animals.stream()
-                .filter(x -> x.getOrigin().equalsIgnoreCase(BY_ORIGIN))
-                .filter(x -> x.getGender().equalsIgnoreCase(BY_GENDER))
+                .filter(x -> BY_ORIGIN.equalsIgnoreCase(x.getOrigin()))
+                .filter(x -> BY_GENDER.equalsIgnoreCase(x.getGender()))
                 .peek(x -> x.setBread(x.getBread().toUpperCase()))
                 .forEach(out::println);
     }
 
     /*
-    Задача №3 - Отобрать всех животных старше 30 лет и вывести все страны происхождения без дубликатов начинающиеся на "A"
+    Задача №3
+     - Отобрать всех животных старше 30 лет и вывести все страны происхождения без дубликатов начинающиеся на "A"
      */
     private static void task3() throws IOException {
         List<Animal> animals = Util.getAnimals();
         final int BY_AGE = 30;
         final char BY_FIRST_CHAR = 'A';
 
-        out.println("\n\nTask 3:");
+        out.println("\nTask 3:");
 
         animals.stream()
-                .filter(x -> x.getAge() > BY_AGE)
-                .filter(x -> x.getOrigin().toUpperCase().charAt(0) == BY_FIRST_CHAR)
+                .filter(x -> BY_AGE < x.getAge())
+                .filter(x -> BY_FIRST_CHAR == x.getOrigin().toUpperCase().charAt(0))
                 .map(x -> x.getOrigin())
                 .distinct()
                 .sorted()
@@ -88,109 +89,103 @@ public class Main {
     }
 
     /*
-    Задача №4 - Подсчитать количество всех животных пола = Female. Вывести в консоль
+    Задача №4
+     - Подсчитать количество всех животных пола = Female. Вывести в консоль
      */
     private static void task4() throws IOException {
         List<Animal> animals = Util.getAnimals();
         final String BY_GENDER = "Female";
 
-        out.println("\n\nTask number 4 - Count the number of all animals of gender = Female. Output to console.");
+        out.println("\nTask number 4:");
 
         long count = animals.stream()
-                .filter(x -> x.getGender().equalsIgnoreCase(BY_GENDER))
-                .count()
-                .if;
+                .filter(x -> BY_GENDER.equalsIgnoreCase(x.getGender()))
+                .count();
         out.println("Number of all sex animals " + BY_GENDER + " = " + count);
 
     }
 
     /*
-    Задача №5 - Взять всех животных возрастом 20 - 30 лет.
-    Есть ли среди них хоть один из страны Венгрия (Hungarian)?
+    Задача №5
+    - Взять всех животных возрастом 20 - 30 лет. Есть ли среди них хоть один из страны Венгрия (Hungarian)?
     Ответ вывести в консоль.
      */
     private static void task5() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
-        out.println("\n\nTask number 5 - Take all animals aged 20 - 30 years. " +
-                "Are there any of them from Hungary (Hungarian)?" +
-                "Output the answer to the console.");
-
         final String BY_ORIGIN = "Hungarian";
         final int MIN_AGE = 20;
         final int MAX_AGE = 30;
 
+        out.println("\nTask number 5:");
+
         boolean isOrigin = animals.stream()
-                .filter(x -> x.getAge() >= MIN_AGE && x.getAge() <= MAX_AGE)
+                .filter(x -> MIN_AGE <= x.getAge() && MAX_AGE >= x.getAge())
                 .allMatch(x -> x.getOrigin().equalsIgnoreCase(BY_ORIGIN));
 
-        out.printf("In this country '%s' animals between %d and %d age : %b", BY_ORIGIN, MIN_AGE, MAX_AGE, isOrigin);
+        out.printf("In this country '%s' animals between %d and %d age : %b\n", BY_ORIGIN, MIN_AGE, MAX_AGE, isOrigin);
     }
 
     /*
-    Задача №6 -Взять всех животных. Все ли они пола Male или Female ? Ответ вывести в консоль.
+    Задача №6
+    -Взять всех животных. Все ли они пола Male или Female ? Ответ вывести в консоль.
      */
     private static void task6() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
-        out.println("\n\nTask number 6 - Take all the animals. Are they all Male or Female? " +
-                "Output the answer to the console.");
+
+        out.println("\nTask number 6:");
 
         final boolean isGender = animals.stream()
-                .allMatch(x -> x.getGender().equalsIgnoreCase("Male".toLowerCase())
-                        || x.getGender().toLowerCase().equalsIgnoreCase("Female".toLowerCase()));
+                .allMatch(x -> "Male".equalsIgnoreCase(x.getGender())
+                        || "Female".equalsIgnoreCase(x.getGender()));
 
         out.println("Are all animals Male or Female? Answer: " + isGender);
     }
 
     /*
-    Задача №7 -Взять всех животных. Узнать что ни одно из них
+    Задача №7
+    -Взять всех животных. Узнать что ни одно из них
     не имеет страну происхождения Oceania. Ответ вывести в консоль.
      */
     private static void task7() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
-        out.println("\n\nTask number 7 - Take all the animals. " +
-                "Find out that none of them have an Oceania country of origin. " +
-                "Output the answer to the console");
-
         final String BY_COUNTRY = "Oceania";
+
+        out.println("\nTask number 7:");
+
         boolean anyMatchAnimals = animals.stream()
                 .anyMatch(x -> BY_COUNTRY.equalsIgnoreCase(x.getOrigin()));
-        out.printf("Is there any animal that lives in %s? %b", BY_COUNTRY, anyMatchAnimals);
+
+        out.printf("Is there any animal that lives in %s? %b\n", BY_COUNTRY, anyMatchAnimals);
     }
 
     /*
-    Задача №8 - Взять всех животных. Отсортировать их породу в стандартном порядке и взять первые 100.
+    Задача №8
+    - Взять всех животных. Отсортировать их породу в стандартном порядке и взять первые 100.
     Вывести в консоль возраст самого старого животного.
      */
     private static void task8() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
-        out.println("\n\nTask number 8 - Take all the animals. " +
-                "Sort their breed in standard order and take the first 100. " +
-                "Print the age of the oldest animal to the console.");
-
         final int COUNT = 100;
+
+        out.println("\nTask number 8:");
 
         animals.stream()
                 .sorted(Comparator.comparing(Animal::getBread))
                 .limit(100)
                 .mapToInt(Animal::getAge)
                 .max()
-                .ifPresent(age -> out.printf("Age of oldest animal = %d", age));
+                .ifPresent(age -> out.printf("Age of oldest animal = %d\n", age));
     }
 
     /*
-    Задача №9 - Взять всех животных. Преобразовать их в породы, а породы в []char.
+    Задача №9
+    - Взять всех животных. Преобразовать их в породы, а породы в []char.
     Вывести в консоль длину самого короткого массива.
      */
     private static void task9() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
-        out.println("\n\nTask number 9 - Take all the animals." +
-                " Convert them to breeds, and breeds to []char. " +
-                "Print the length of the shortest array to the console.");
+
+        out.println("\nTask number 9:");
 
         animals.stream()
                 .map(Animal::getBread)
@@ -201,27 +196,35 @@ public class Main {
     }
 
     /*
-    Задача №10 - Взять всех животных. Подсчитать суммарный возраст всех животных. Вывести результат в консоль.
+    Задача №10
+    - Взять всех животных. Подсчитать суммарный возраст всех животных. Вывести результат в консоль.
      */
     private static void task10() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
-        out.println("\n\nTask number 10 - Take all the animals. " +
-                "Calculate the total age of all animals. " +
-                "Print the result to the console.");
+        out.println("\nTask number 10:");
 
         long sumAge = animals.stream()
                 .mapToLong(Animal::getAge)
                 .sum();
-        out.printf("The total age of all animals = %d age", sumAge);
+
+        out.printf("The total age of all animals = %d age\n", sumAge);
     }
 
     /*
-    Задача №11 - Взять всех животных. Подсчитать средний возраст всех животных из индонезии (Indonesian). Вывести результат в консоль.
+    Задача №11
+    - Взять всех животных. Подсчитать средний возраст всех животных из индонезии (Indonesian). Вывести результат в консоль.
      */
     private static void task11() throws IOException {
         List<Animal> animals = Util.getAnimals();
-        //        animals.stream() Продолжить ...
+        final String BY_COUNTRY = "Indonesian";
+
+        out.println("\nTask number 11:");
+
+        animals.stream()
+                .filter(x -> BY_COUNTRY.equalsIgnoreCase(x.getOrigin()))
+                .mapToInt(Animal::getAge)
+                .average()
+                .ifPresent(age->out.printf("Average age of all animals from %s: %.2f\n",BY_COUNTRY,age));
     }
 
     /*
@@ -233,7 +236,9 @@ public class Main {
      */
     private static void task12() throws IOException {
         List<Person> people = Util.getPersons();
-//        Продолжить...
+        out.println("\nTask number 12:");
+
+        out.println("NULL");
     }
 
     /*
@@ -244,7 +249,9 @@ public class Main {
      */
     private static void task13() throws IOException {
         List<House> houses = Util.getHouses();
-        //        Продолжить...
+        out.println("\nTask number 13:");
+
+        out.println("NULL");
     }
 
     /*
@@ -264,7 +271,9 @@ public class Main {
      */
     private static void task14() throws IOException {
         List<Car> cars = Util.getCars();
-        //        Продолжить...
+        out.println("\nTask number 14:");
+
+        out.println("NULL");
     }
 
     /*
@@ -278,6 +287,8 @@ public class Main {
      */
     private static void task15() throws IOException {
         List<Flower> flowers = Util.getFlowers();
-        //        Продолжить...
+        out.println("\nTask number 15:");
+
+        out.println("NULL");
     }
 }
