@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Flower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/House.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/util/Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Tasks.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/animals.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/cars.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/flowers.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/recruits.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: Add Task 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +32,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Clevertec/Tasks/Stream&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Clevertec/Tasks/Stream",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Clevertec\Tasks\Stream" />
@@ -92,8 +80,23 @@
       <workItem from="1676185135661" duration="72000" />
       <workItem from="1676259792883" duration="124000" />
       <workItem from="1676259925011" duration="1252000" />
-      <workItem from="1676261220804" duration="4158000" />
+      <workItem from="1676261220804" duration="5959000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: Add Task 3">
+      <created>1676265777913</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676265777913</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: Add Task 3">
+      <created>1676265895110</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676265895110</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,5 +115,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="feat: Add Task 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add Task 3" />
   </component>
 </project>

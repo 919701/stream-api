@@ -42,11 +42,12 @@ public class Main {
                 "и записать породу UPPER_CASE в если пол Female преобразовать к строкам " +
                 "породы животных и вывести в консоль\n");
 
-        final String ORIGIN = "Japanese";
-        final String GENDER = "Female";
+        final String BY_ORIGIN = "Japanese";
+        final String BY_GENDER = "Female";
 
         animals.stream()
-                .filter(x -> x.getOrigin().equals(ORIGIN) && x.getGender().equals(GENDER))
+                .filter(x -> x.getOrigin().equals(BY_ORIGIN))
+                .filter(x->x.getGender().equals(BY_GENDER))
                 .peek(x -> x.setBread(x.getBread().toUpperCase()))
                 .forEach(System.out::println);
     }
@@ -61,9 +62,12 @@ public class Main {
         System.out.println("\nЗадача №3 - Отобрать всех животных старше 30 лет " +
                 "и вывести все страны происхождения без дубликатов начинающиеся на \"A\"\n");
 
-        final int AGE = 30;
+        final int BY_AGE = 30;
+        final char BY_FIRST_CHAR = 'A';
+
         animals.stream()
-                .filter(x -> x.getAge() > AGE)
+                .filter(x -> x.getAge() > BY_AGE)
+                .filter(x -> x.getOrigin().toUpperCase().charAt(0) == BY_FIRST_CHAR)
                 .map(x->x.getOrigin())
                 .distinct()
                 .sorted()
