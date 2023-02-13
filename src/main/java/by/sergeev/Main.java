@@ -61,8 +61,9 @@ public class Main {
         System.out.println("\nЗадача №3 - Отобрать всех животных старше 30 лет " +
                 "и вывести все страны происхождения без дубликатов начинающиеся на \"A\"\n");
 
+        final int AGE = 30;
         animals.stream()
-                .filter(x->x.getAge()>30)
+                .filter(x -> x.getAge() > AGE)
                 .map(x->x.getOrigin())
                 .distinct()
                 .sorted()
