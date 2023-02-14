@@ -84,8 +84,8 @@ public class Main {
 
         animals.stream()
                 .filter(x -> BY_AGE < x.getAge())
-                .filter(x -> BY_FIRST_CHAR == x.getOrigin().toUpperCase().charAt(0))
-                .map(x -> x.getOrigin())
+                .map(Animal::getOrigin)
+                .filter(origin -> BY_FIRST_CHAR == origin.toUpperCase().charAt(0))
                 .distinct()
                 .sorted()
                 .forEach(out::println);
@@ -175,7 +175,7 @@ public class Main {
 
         animals.stream()
                 .sorted(comparing(Animal::getBread))
-                .limit(100)
+                .limit(COUNT)
                 .mapToInt(Animal::getAge)
                 .max()
                 .ifPresent(age -> out.printf("Age of oldest animal = %d\n", age));
