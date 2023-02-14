@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: Finish Task 12">
+    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: continue TASK 11">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/model/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/House.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +50,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -70,7 +77,8 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Main">
@@ -182,6 +190,11 @@
             <State />
           </value>
         </entry>
+        <entry key="b3c75c8c-329e-469e-9ea3-17d4971b6113">
+          <value>
+            <State />
+          </value>
+        </entry>
       </map>
     </option>
   </component>
@@ -192,5 +205,9 @@
     <MESSAGE value="feat: Finish Task 11" />
     <MESSAGE value="feat: Finish Task 12" />
     <option name="LAST_COMMIT_MESSAGE" value="feat: Finish Task 12" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
