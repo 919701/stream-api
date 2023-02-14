@@ -10,6 +10,7 @@ import java.util.List;
 
 import static java.lang.System.out;
 import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.toList;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -45,7 +46,7 @@ public class Main {
         out.println("\nTask 1:");
 
         animals.stream()
-                .filter(x -> MIN_AGE <= x.getAge() && MAX_AGE > x.getAge())
+                .filter(animal -> MIN_AGE <= animal.getAge() && MAX_AGE > animal.getAge())
                 .sorted(comparing(Animal::getAge))
                 .skip(14)
                 .limit(7)
@@ -65,9 +66,9 @@ public class Main {
         out.println("\nTask 2:");
 
         animals.stream()
-                .filter(x -> BY_ORIGIN.equalsIgnoreCase(x.getOrigin()))
-                .filter(x -> BY_GENDER.equalsIgnoreCase(x.getGender()))
-                .peek(x -> x.setBread(x.getBread().toUpperCase()))
+                .filter(animal -> BY_ORIGIN.equalsIgnoreCase(animal.getOrigin()))
+                .filter(animal -> BY_GENDER.equalsIgnoreCase(animal.getGender()))
+                .peek(animal -> animal.setBread(animal.getBread().toUpperCase()))
                 .forEach(out::println);
     }
 
@@ -83,7 +84,7 @@ public class Main {
         out.println("\nTask 3:");
 
         animals.stream()
-                .filter(x -> BY_AGE < x.getAge())
+                .filter(animal -> BY_AGE < animal.getAge())
                 .map(Animal::getOrigin)
                 .filter(origin -> BY_FIRST_CHAR == origin.toUpperCase().charAt(0))
                 .distinct()
@@ -102,7 +103,7 @@ public class Main {
         out.println("\nTask number 4:");
 
         long count = animals.stream()
-                .filter(x -> BY_GENDER.equalsIgnoreCase(x.getGender()))
+                .filter(animal -> BY_GENDER.equalsIgnoreCase(animal.getGender()))
                 .count();
 
         out.println("Number of all sex animals " + BY_GENDER + " = " + count);
@@ -123,8 +124,8 @@ public class Main {
         out.println("\nTask number 5:");
 
         boolean isOrigin = animals.stream()
-                .filter(x -> MIN_AGE <= x.getAge() && MAX_AGE >= x.getAge())
-                .allMatch(x -> x.getOrigin().equalsIgnoreCase(BY_ORIGIN));
+                .filter(animal -> MIN_AGE <= animal.getAge() && MAX_AGE >= animal.getAge())
+                .allMatch(animal -> BY_ORIGIN.equalsIgnoreCase(animal.getOrigin()));
 
         out.printf("In this country '%s' animals between %d and %d age : %b\n", BY_ORIGIN, MIN_AGE, MAX_AGE, isOrigin);
     }
@@ -139,8 +140,8 @@ public class Main {
         out.println("\nTask number 6:");
 
         final boolean isGender = animals.stream()
-                .allMatch(x -> "Male".equalsIgnoreCase(x.getGender())
-                        || "Female".equalsIgnoreCase(x.getGender()));
+                .allMatch(animal -> "Male".equalsIgnoreCase(animal.getGender())
+                        || "Female".equalsIgnoreCase(animal.getGender()));
 
         out.println("Are all animals Male or Female? " + isGender);
     }
@@ -157,7 +158,7 @@ public class Main {
         out.println("\nTask number 7:");
 
         boolean anyMatchAnimals = animals.stream()
-                .anyMatch(x -> BY_COUNTRY.equalsIgnoreCase(x.getOrigin()));
+                .anyMatch(animal -> BY_COUNTRY.equalsIgnoreCase(animal.getOrigin()));
 
         out.printf("Is there any animal that lives in %s? %b\n", BY_COUNTRY, anyMatchAnimals);
     }
@@ -226,7 +227,7 @@ public class Main {
         out.println("\nTask number 11:");
 
         animals.stream()
-                .filter(x -> BY_COUNTRY.equalsIgnoreCase(x.getOrigin()))
+                .filter(animal -> BY_COUNTRY.equalsIgnoreCase(animal.getOrigin()))
                 .mapToInt(Animal::getAge)
                 .average()
                 .ifPresent(age -> out.printf("Average age of all animals from %s: %.2f\n", BY_COUNTRY, age));
@@ -270,14 +271,12 @@ public class Main {
         final int RETIREMENT_AGE = 60;
         final int COUNT_EVACUATION_PLACES = 50;
 
+
         out.println("\nTask number 13:");
 
-//        List<Person> hospitalPeoples = houses.stream()
-//                .filter(x -> BY_FIRST_QUEUE.equalsIgnoreCase(x.getBuildingType())
-//                        .map(House::getPersonList)
-//                        .forEach(out::println);
 
-        out.println("NULL");
+
+        out.println("********************* N U L L ********************");
 
     }
 
