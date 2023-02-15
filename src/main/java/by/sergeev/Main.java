@@ -7,28 +7,31 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.Map;
 
 import static java.lang.System.out;
 import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        task1();
-        task2();
-        task3();
-        task4();
-        task5();
-        task6();
-        task7();
-        task8();
-        task9();
-        task10();
-        task11();
-        task12();
+//        task1();
+//        task2();
+//        task3();
+//        task4();
+//        task5();
+//        task6();
+//        task7();
+//        task8();
+//        task9();
+//        task10();
+//        task11();
+//        task12();
+//        task13();
+//        task14();
+//        task15();
+
         task13();
-        task14();
-        task15();
     }
 
     /*
@@ -39,11 +42,11 @@ public class Main {
      Полученных животных вывести в консоль.
      */
     private static void task1() throws IOException {
+        out.println("\nTask 1:");
+
         List<Animal> animals = Util.getAnimals();
         final int MIN_AGE = 10;
         final int MAX_AGE = 20;
-
-        out.println("\nTask 1:");
 
         animals.stream()
                 .filter(animal -> MIN_AGE <= animal.getAge() && MAX_AGE > animal.getAge())
@@ -59,11 +62,11 @@ public class Main {
      если пол Female преобразовать к строкам породы животных и вывести в консоль
      */
     private static void task2() throws IOException {
+        out.println("\nTask 2:");
+
         List<Animal> animals = Util.getAnimals();
         final String BY_ORIGIN = "Japanese";
         final String BY_GENDER = "Female";
-
-        out.println("\nTask 2:");
 
         animals.stream()
                 .filter(animal -> BY_ORIGIN.equalsIgnoreCase(animal.getOrigin()))
@@ -77,11 +80,11 @@ public class Main {
      - Отобрать всех животных старше 30 лет и вывести все страны происхождения без дубликатов начинающиеся на "A"
      */
     private static void task3() throws IOException {
+        out.println("\nTask 3:");
+
         List<Animal> animals = Util.getAnimals();
         final int BY_AGE = 30;
         final char BY_FIRST_CHAR = 'A';
-
-        out.println("\nTask 3:");
 
         animals.stream()
                 .filter(animal -> BY_AGE < animal.getAge())
@@ -97,10 +100,10 @@ public class Main {
      - Подсчитать количество всех животных пола = Female. Вывести в консоль
      */
     private static void task4() throws IOException {
+        out.println("\nTask 4:");
+
         List<Animal> animals = Util.getAnimals();
         final String BY_GENDER = "Female";
-
-        out.println("\nTask number 4:");
 
         long count = animals.stream()
                 .filter(animal -> BY_GENDER.equalsIgnoreCase(animal.getGender()))
@@ -116,12 +119,12 @@ public class Main {
     Ответ вывести в консоль.
      */
     private static void task5() throws IOException {
+        out.println("\nTask 5:");
+
         List<Animal> animals = Util.getAnimals();
         final String BY_ORIGIN = "Hungarian";
         final int MIN_AGE = 20;
         final int MAX_AGE = 30;
-
-        out.println("\nTask number 5:");
 
         boolean isOrigin = animals.stream()
                 .filter(animal -> MIN_AGE <= animal.getAge() && MAX_AGE >= animal.getAge())
@@ -135,9 +138,9 @@ public class Main {
     -Взять всех животных. Все ли они пола Male или Female ? Ответ вывести в консоль.
      */
     private static void task6() throws IOException {
-        List<Animal> animals = Util.getAnimals();
+        out.println("\nTask 6:");
 
-        out.println("\nTask number 6:");
+        List<Animal> animals = Util.getAnimals();
 
         final boolean isGender = animals.stream()
                 .allMatch(animal -> "Male".equalsIgnoreCase(animal.getGender())
@@ -152,10 +155,10 @@ public class Main {
     не имеет страну происхождения Oceania. Ответ вывести в консоль.
      */
     private static void task7() throws IOException {
+        out.println("\nTask 7:");
+
         List<Animal> animals = Util.getAnimals();
         final String BY_COUNTRY = "Oceania";
-
-        out.println("\nTask number 7:");
 
         boolean anyMatchAnimals = animals.stream()
                 .anyMatch(animal -> BY_COUNTRY.equalsIgnoreCase(animal.getOrigin()));
@@ -169,10 +172,10 @@ public class Main {
     Вывести в консоль возраст самого старого животного.
      */
     private static void task8() throws IOException {
+        out.println("\nTask 8:");
+
         List<Animal> animals = Util.getAnimals();
         final int COUNT = 100;
-
-        out.println("\nTask number 8:");
 
         animals.stream()
                 .sorted(comparing(Animal::getBread))
@@ -188,9 +191,9 @@ public class Main {
     Вывести в консоль длину самого короткого массива.
      */
     private static void task9() throws IOException {
-        List<Animal> animals = Util.getAnimals();
+        out.println("\nTask 9:");
 
-        out.println("\nTask number 9:");
+        List<Animal> animals = Util.getAnimals();
 
         animals.stream()
                 .map(Animal::getBread)
@@ -205,9 +208,9 @@ public class Main {
     - Взять всех животных. Подсчитать суммарный возраст всех животных. Вывести результат в консоль.
      */
     private static void task10() throws IOException {
-        List<Animal> animals = Util.getAnimals();
+        out.println("\nTask 10:");
 
-        out.println("\nTask number 10:");
+        List<Animal> animals = Util.getAnimals();
 
         long sumAge = animals.stream()
                 .mapToLong(Animal::getAge)
@@ -221,10 +224,10 @@ public class Main {
     - Взять всех животных. Подсчитать средний возраст всех животных из индонезии (Indonesian). Вывести результат в консоль.
      */
     private static void task11() throws IOException {
+        out.println("\nTask number 11:");
+
         List<Animal> animals = Util.getAnimals();
         final String BY_COUNTRY = "Indonesian";
-
-        out.println("\nTask number 11:");
 
         animals.stream()
                 .filter(animal -> BY_COUNTRY.equalsIgnoreCase(animal.getOrigin()))
@@ -241,13 +244,14 @@ public class Main {
     приоритета по военной категории. Однако взять на обучение академия может только 200 человек. Вывести их в консоль.
      */
     private static void task12() throws IOException {
+        out.println("\nTask 12:");
+
         List<Person> people = Util.getPersons();
         final String BY_GENDER = "Male";
         final int MIN_AGE = 18;
         final int MAX_AGE = 27;
         final int COUNT_PERSON = 200;
 
-        out.println("\nTask number 12:");
         people.stream()
                 .filter(p -> BY_GENDER.equalsIgnoreCase(p.getGender()))
                 .filter(age -> MIN_AGE <= ChronoUnit.YEARS.between(age.getDateOfBirth(), LocalDate.now()))
@@ -265,18 +269,35 @@ public class Main {
     Вывести всех людей попадающих в первый этап эвакуации в порядке приоритета (в консоль).
      */
     private static void task13() throws IOException {
+        out.println("\nTask 13:");
+
         List<House> houses = Util.getHouses();
         final String BY_FIRST_QUEUE = "Hospital";
         final int CHILDREN_AGE = 18;
-        final int RETIREMENT_AGE = 60;
-        final int COUNT_EVACUATION_PLACES = 50;
+        final int MALE_RETIREMENT_AGE = 65;
+        final int FEMALE_RETIREMENT_AGE = 58;
+        final int COUNT_EVACUATION_PLACES = 500;
 
+        Map<Boolean, List<Person>> persons = houses.stream()
+                .collect(partitioningBy(house -> BY_FIRST_QUEUE.equalsIgnoreCase(house.getBuildingType()),
+                        flatMapping(house -> house.getPersonList().stream()
+                                .sorted(comparing(
+                                                person -> (
+                                                        (CHILDREN_AGE >= ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()))
+                                                                || (FEMALE_RETIREMENT_AGE >= ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now())
+                                                                && "Female".equalsIgnoreCase(person.getGender())
+                                                                || (MALE_RETIREMENT_AGE >= ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now())
+                                                                && "Male".equalsIgnoreCase(person.getGender()))
+                                                        )
+                                                )
+                                        )
+                                ), toList())));
+        persons.get(true).addAll(persons.get(false));
 
-        out.println("\nTask number 13:");
+        persons.get(true).stream()
+                .limit(COUNT_EVACUATION_PLACES)
+                .forEach(out::println);
 
-
-
-        out.println("********************* N U L L ********************");
 
     }
 
@@ -297,7 +318,7 @@ public class Main {
      */
     private static void task14() throws IOException {
         List<Car> cars = Util.getCars();
-        out.println("\nTask number 14:");
+        out.println("\nTask 14:");
 
         out.println("NULL");
     }
@@ -313,7 +334,7 @@ public class Main {
      */
     private static void task15() throws IOException {
         List<Flower> flowers = Util.getFlowers();
-        out.println("\nTask number 15:");
+        out.println("\nTask 15:");
 
         out.println("NULL");
     }
