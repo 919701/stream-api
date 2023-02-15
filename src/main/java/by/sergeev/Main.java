@@ -292,17 +292,15 @@ public class Main {
         persons.get(false).removeAll(secondEvocuation);
         persons.get(true).addAll(secondEvocuation);
         persons.get(true).addAll(persons.get(false));
-
         List<Person> evocuationList = persons.get(true).subList(0, COUNT_EVACUATION_PLACES);
 
-//        evocuationList.forEach(person ->  person.setFirstName(Long.toString(ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()))));
         evocuationList.forEach(out::println);
     }
 
     /*
     Задача №14 -
 Из перечня автомобилей приходящих на рынок Азии логистическому агентству предстоит отсортировать их в порядке следования
-1.Туркменистан - 2.Узбекистан - 3.Казахстан - 4.Кыргызстан - 5.Россия - 6.Монголия.
+1.Туркменистан(TM) - 2.Узбекистан(UZ) - 3.Казахстан(KZ) - 4.Кыргызстан(KIZ) - 5.Россия(RU) - 6.Монголия(MN).
 Все автомобили марки "Jaguar" а так же все авто цвета White идут в первую страну.
 Из оставшихся все автомобили с массой до 1500 кг и марок BMW, Lexus, Chrysler и Toyota идут во второй эшелон.
 Из оставшихся все автомобили Черного цвета с массой более 4000 кг и все GMC и Dodge идут в третий эшелон.
@@ -317,6 +315,54 @@ public class Main {
     private static void task14() throws IOException {
         List<Car> cars = Util.getCars();
         out.println("\nTask 14:");
+
+        List<Car> tm = cars.stream()
+                .filter(car -> "Jaguar".equalsIgnoreCase(car.getCarMake())
+                        || "White".equalsIgnoreCase(car.getColor()))
+                .toList();
+
+        cars.removeAll(tm);
+
+        List<Car> uz = cars.stream()
+                .filter(car -> 1500 > car.getMass())
+                .filter(car -> "BMW".equalsIgnoreCase(car.getCarMake())
+                        || "Lexus".equalsIgnoreCase(car.getCarMake())
+                        || "Chrysler".equalsIgnoreCase(car.getCarMake())
+                        || "Toyota".equalsIgnoreCase(car.getCarMake()))
+                .toList();
+
+        cars.removeAll(uz);
+
+        List<Car> kz = cars.stream()
+                .filter(car -> ("Black".equalsIgnoreCase(car.getColor()) && 4000 < car.getMass())
+                        || "GMC".equalsIgnoreCase(car.getCarMake())
+                        || "Dodge".equalsIgnoreCase(car.getCarMake()))
+                .toList();
+
+        cars.removeAll(kz);
+
+        List<Car> kiz = cars.stream()
+                .filter(car -> car.getReleaseYear() < 1982
+                        || "Civic".equalsIgnoreCase(car.getCarModel())
+                        || "Cherokee".equalsIgnoreCase(car.getCarModel()))
+                .toList();
+
+        cars.removeAll(kiz);
+
+        List<Car> ru = cars.stream()
+                .filter(car -> (!car.getColor().equalsIgnoreCase("Yellow")
+                        && !"Red".equalsIgnoreCase(car.getColor())
+                        && !"Green".equalsIgnoreCase(car.getColor())
+                        && !"Blue".equalsIgnoreCase(car.getColor()))
+                        || 40_000 < car.getPrice())
+                .toList();
+
+        cars.removeAll(ru);
+
+        List<Car> mn = cars.stream()
+                .filter(car -> car.getVin().contains("59"))
+                .toList();
+
 
         out.println("*********NULL");
     }
