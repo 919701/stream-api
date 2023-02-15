@@ -320,7 +320,7 @@ public class Main {
         List<Car> cars = Util.getCars();
         out.println("\nTask 14:");
 
-        out.println("NULL");
+        out.println("*********NULL");
     }
 
     /*
@@ -336,6 +336,6 @@ public class Main {
         List<Flower> flowers = Util.getFlowers();
         out.println("\nTask 15:");
 
-        out.println("NULL");
+        out.println("*****NULL");
     }
 }
