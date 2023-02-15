@@ -48,7 +48,7 @@ public class Main {
         final int MAX_AGE = 20;
 
         animals.stream()
-                .filter(animal -> MIN_AGE <= animal.getAge() && MAX_AGE > animal.getAge())
+                .filter(animal -> animal.getAge() >= MIN_AGE && animal.getAge() < MAX_AGE)
                 .sorted(comparing(Animal::getAge))
                 .skip(14)
                 .limit(7)
@@ -68,8 +68,8 @@ public class Main {
         final String BY_GENDER = "Female";
 
         animals.stream()
-                .filter(animal -> BY_ORIGIN.equalsIgnoreCase(animal.getOrigin()))
-                .filter(animal -> BY_GENDER.equalsIgnoreCase(animal.getGender()))
+                .filter(animal -> animal.getOrigin().equalsIgnoreCase(BY_ORIGIN))
+                .filter(animal -> animal.getGender().equalsIgnoreCase(BY_GENDER))
                 .peek(animal -> animal.setBread(animal.getBread().toUpperCase()))
                 .forEach(out::println);
     }
@@ -86,9 +86,9 @@ public class Main {
         final char BY_FIRST_CHAR = 'A';
 
         animals.stream()
-                .filter(animal -> BY_AGE < animal.getAge())
+                .filter(animal -> animal.getAge() > BY_AGE)
                 .map(Animal::getOrigin)
-                .filter(origin -> BY_FIRST_CHAR == origin.toUpperCase().charAt(0))
+                .filter(origin -> origin.toUpperCase().charAt(0) == BY_FIRST_CHAR)
                 .distinct()
                 .sorted()
                 .forEach(out::println);
@@ -105,7 +105,7 @@ public class Main {
         final String BY_GENDER = "Female";
 
         long count = animals.stream()
-                .filter(animal -> BY_GENDER.equalsIgnoreCase(animal.getGender()))
+                .filter(animal -> animal.getGender().equalsIgnoreCase(BY_GENDER))
                 .count();
 
         out.println("Number of all sex animals " + BY_GENDER + " = " + count);
@@ -126,8 +126,8 @@ public class Main {
         final int MAX_AGE = 30;
 
         boolean isOrigin = animals.stream()
-                .filter(animal -> MIN_AGE <= animal.getAge() && MAX_AGE >= animal.getAge())
-                .allMatch(animal -> BY_ORIGIN.equalsIgnoreCase(animal.getOrigin()));
+                .filter(animal -> animal.getAge() >= MIN_AGE && animal.getAge() <= MAX_AGE)
+                .allMatch(animal -> animal.getOrigin().equalsIgnoreCase(BY_ORIGIN));
 
         out.printf("In this country '%s' animals between %d and %d age : %b\n", BY_ORIGIN, MIN_AGE, MAX_AGE, isOrigin);
     }
@@ -142,8 +142,8 @@ public class Main {
         List<Animal> animals = Util.getAnimals();
 
         final boolean isGender = animals.stream()
-                .allMatch(animal -> "Male".equalsIgnoreCase(animal.getGender())
-                        || "Female".equalsIgnoreCase(animal.getGender()));
+                .allMatch(animal -> animal.getGender().equalsIgnoreCase("Male")
+                        || animal.getGender().equalsIgnoreCase("Female"));
 
         out.println("Are all animals Male or Female? " + isGender);
     }
@@ -160,7 +160,7 @@ public class Main {
         final String BY_COUNTRY = "Oceania";
 
         boolean anyMatchAnimals = animals.stream()
-                .anyMatch(animal -> BY_COUNTRY.equalsIgnoreCase(animal.getOrigin()));
+                .anyMatch(animal -> animal.getOrigin().equalsIgnoreCase(BY_COUNTRY));
 
         out.printf("Is there any animal that lives in %s? %b\n", BY_COUNTRY, anyMatchAnimals);
     }
@@ -229,7 +229,7 @@ public class Main {
         final String BY_COUNTRY = "Indonesian";
 
         animals.stream()
-                .filter(animal -> BY_COUNTRY.equalsIgnoreCase(animal.getOrigin()))
+                .filter(animal -> animal.getOrigin().equalsIgnoreCase(BY_COUNTRY))
                 .mapToInt(Animal::getAge)
                 .average()
                 .ifPresent(age -> out.printf("Average age of all animals from %s: %.2f\n", BY_COUNTRY, age));
@@ -252,9 +252,9 @@ public class Main {
         final int COUNT_PERSON = 200;
 
         people.stream()
-                .filter(p -> BY_GENDER.equalsIgnoreCase(p.getGender()))
-                .filter(age -> MIN_AGE <= ChronoUnit.YEARS.between(age.getDateOfBirth(), LocalDate.now()))
-                .filter(age -> MAX_AGE >= ChronoUnit.YEARS.between(age.getDateOfBirth(), LocalDate.now()))
+                .filter(p -> p.getGender().equalsIgnoreCase(BY_GENDER))
+                .filter(age -> ChronoUnit.YEARS.between(age.getDateOfBirth(), LocalDate.now()) >= MIN_AGE)
+                .filter(age -> ChronoUnit.YEARS.between(age.getDateOfBirth(), LocalDate.now()) <= MAX_AGE)
                 .sorted(comparing(Person::getRecruitmentGroup))
                 .limit(COUNT_PERSON)
                 .forEach(out::println);
@@ -278,14 +278,14 @@ public class Main {
         final int COUNT_EVACUATION_PLACES = 500;
 
         Map<Boolean, List<Person>> persons = houses.stream()
-                .collect(partitioningBy(house -> BY_FIRST_QUEUE.equalsIgnoreCase(house.getBuildingType()),
+                .collect(partitioningBy(house -> house.getBuildingType().equalsIgnoreCase(BY_FIRST_QUEUE),
                         flatMapping(house -> house.getPersonList().stream(), toList())));
         List<Person> secondEvocuation = persons.get(false).stream()
-                .filter(person -> CHILDREN_AGE > ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now())
-                        || (FEMALE_RETIREMENT_AGE <= ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now())
-                        && person.getGender().equals("Female"))
-                        || (MALE_RETIREMENT_AGE <= ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now())
-                        && person.getGender().equals("Male")))
+                .filter(person -> ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()) < CHILDREN_AGE
+                        || (ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()) >= FEMALE_RETIREMENT_AGE
+                        && person.getGender().equalsIgnoreCase("Female"))
+                        || (ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()) >= MALE_RETIREMENT_AGE
+                        && person.getGender().equalsIgnoreCase("Male")))
                 .toList();
 
         persons.get(false).removeAll(secondEvocuation);
@@ -316,45 +316,45 @@ public class Main {
         out.println("\nTask 14:");
 
         List<Car> eschelon1 = cars.stream()
-                .filter(car -> "Jaguar".equalsIgnoreCase(car.getCarMake())
-                        || "White".equalsIgnoreCase(car.getColor()))
+                .filter(car -> car.getCarMake().equalsIgnoreCase("Jaguar")
+                        || car.getColor().equalsIgnoreCase("White"))
                 .toList();
         int totalMass1 = eschelon1.stream().map(Car::getMass).reduce(Integer::sum).orElse(0);
 
 //        cars.removeAll(eschelon1);
 
         List<Car> eschelon2 = cars.stream()
-                .filter(car -> 1500 > car.getMass())
-                .filter(car -> "BMW".equalsIgnoreCase(car.getCarMake())
-                        || "Lexus".equalsIgnoreCase(car.getCarMake())
-                        || "Chrysler".equalsIgnoreCase(car.getCarMake())
-                        || "Toyota".equalsIgnoreCase(car.getCarMake()))
+                .filter(car -> car.getMass() < 1500)
+                .filter(car -> car.getCarMake().equalsIgnoreCase("BMW")
+                        || car.getCarMake().equalsIgnoreCase("Lexus")
+                        || car.getCarMake().equalsIgnoreCase("Chrysler")
+                        || car.getCarMake().equalsIgnoreCase("Toyota"))
                 .toList();
 
 //        cars.removeAll(eschelon2);
 
         List<Car> eschelon3 = cars.stream()
-                .filter(car -> ("Black".equalsIgnoreCase(car.getColor()) && 4000 < car.getMass())
-                        || "GMC".equalsIgnoreCase(car.getCarMake())
-                        || "Dodge".equalsIgnoreCase(car.getCarMake()))
+                .filter(car -> (car.getColor().equalsIgnoreCase("Black") && car.getMass() > 4000)
+                        || car.getCarMake().equalsIgnoreCase("GMC")
+                        || car.getCarMake().equalsIgnoreCase("Dodge"))
                 .toList();
 
 //        cars.removeAll(eschelon3);
 
         List<Car> eschelon4 = cars.stream()
                 .filter(car -> car.getReleaseYear() < 1982
-                        || "Civic".equalsIgnoreCase(car.getCarModel())
-                        || "Cherokee".equalsIgnoreCase(car.getCarModel()))
+                        || car.getCarModel().equalsIgnoreCase("Civic")
+                        || car.getCarModel().equalsIgnoreCase("Cherokee"))
                 .toList();
 
 //        cars.removeAll(eschelon4);
 
         List<Car> eschelon5 = cars.stream()
-                .filter(car -> (!car.getColor().equalsIgnoreCase("Yellow")
-                        && !"Red".equalsIgnoreCase(car.getColor())
-                        && !"Green".equalsIgnoreCase(car.getColor())
-                        && !"Blue".equalsIgnoreCase(car.getColor()))
-                        || 40_000 < car.getPrice())
+                .filter(car -> (!"Yellow".equalsIgnoreCase(car.getColor())
+                        && !car.getColor().equalsIgnoreCase("Red")
+                        && !car.getColor().equalsIgnoreCase("Green")
+                        && !car.getColor().equalsIgnoreCase("Blue"))
+                        || car.getPrice() > 40_000)
                 .toList();
 
 //        cars.removeAll(eschelon5);
@@ -364,11 +364,12 @@ public class Main {
                 .toList();
 
         List<Integer> eschelonMass = Stream.of(eschelon1, eschelon2, eschelon3, eschelon4, eschelon5, eschelon6)
-                .map(esch -> esch.stream().map(Car::getMass)
+                .map(esch -> esch.stream()
+                        .map(Car::getMass)
                         .reduce(Integer::sum)
                         .orElse(0))
                 .toList();
-//        Double totalMass = eschelonMass.stream().reduce(Double::sum).orElse(0);
+//        Double totalMass = eschelonMass.stream().;
 
     }
 
@@ -384,7 +385,23 @@ public class Main {
     private static void task15() throws IOException {
         List<Flower> flowers = Util.getFlowers();
         out.println("\nTask 15:");
+        final int SETTLEMENT_PERIOD = 5 * 365;
+        final double WATER_COAST = 1.39d;
 
-        out.println("*****NULL");
+        double coastFlower = flowers.stream()
+                .sorted(comparing(Flower::getOrigin).reversed())
+                .sorted(comparing(Flower::getPrice))
+                .sorted(comparing(Flower::getWaterConsumptionPerDay))
+                .filter(flower -> String.valueOf(flower.getCommonName().charAt(0)).matches("[C-S]"))
+                .filter(flower -> flower.isShadePreferred()
+                        && (flower.getFlowerVaseMaterial().contains("Class")
+                        || flower.getFlowerVaseMaterial().contains("Aluminium")
+                        || flower.getFlowerVaseMaterial().contains("Steel")))
+                .mapToDouble(flower -> flower.getPrice()
+                        + flower.getWaterConsumptionPerDay()
+                        * SETTLEMENT_PERIOD * WATER_COAST)
+                .sum();
+
+        out.printf("Maintenance cost of all plants: $ %.2f ", coastFlower);
     }
 }
