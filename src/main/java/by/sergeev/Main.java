@@ -280,25 +280,23 @@ public class Main {
 
         Map<Boolean, List<Person>> persons = houses.stream()
                 .collect(partitioningBy(house -> BY_FIRST_QUEUE.equalsIgnoreCase(house.getBuildingType()),
-                        flatMapping(house -> house.getPersonList().stream()
-                                .sorted(comparing(
-                                                person -> (
-                                                        (CHILDREN_AGE >= ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()))
-                                                                || (FEMALE_RETIREMENT_AGE >= ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now())
-                                                                && "Female".equalsIgnoreCase(person.getGender())
-                                                                || (MALE_RETIREMENT_AGE >= ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now())
-                                                                && "Male".equalsIgnoreCase(person.getGender()))
-                                                        )
-                                                )
-                                        )
-                                ), toList())));
+                        flatMapping(house -> house.getPersonList().stream(), toList())));
+        List<Person> secondEvocuation = persons.get(false).stream()
+                .filter(person -> CHILDREN_AGE > ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now())
+                        || (FEMALE_RETIREMENT_AGE <= ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now())
+                        && person.getGender().equals("Female"))
+                        || (MALE_RETIREMENT_AGE <= ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now())
+                        && person.getGender().equals("Male")))
+                .toList();
+
+        persons.get(false).removeAll(secondEvocuation);
+        persons.get(true).addAll(secondEvocuation);
         persons.get(true).addAll(persons.get(false));
 
-        persons.get(true).stream()
-                .limit(COUNT_EVACUATION_PLACES)
-                .forEach(out::println);
+        List<Person> evocuationList = persons.get(true).subList(0, COUNT_EVACUATION_PLACES);
 
-
+//        evocuationList.forEach(person ->  person.setFirstName(Long.toString(ChronoUnit.YEARS.between(person.getDateOfBirth(), LocalDate.now()))));
+        evocuationList.forEach(out::println);
     }
 
     /*
