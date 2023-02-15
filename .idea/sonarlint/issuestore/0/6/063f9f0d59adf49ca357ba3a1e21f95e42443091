@@ -1,0 +1,53 @@
+
+]
+java:S1192E"GDefine a constant instead of duplicating this literal "Female" 4 times.(šÂ’š
+P	java:S125"<This block of commented-out lines of code should be removed.(“»ûd
+7
+java:S3864J"!Remove this use of "Stream.peek".(Ñ“ÉÒ
+P
+java:S1854":Remove this useless assignment to local variable "second".(€“”
+g
+java:S1854—"KRemove this useless assignment to local variable "COUNT_EVACUATION_PLACES".(õ„‚äüÿÿÿÿ
+X
+java:S1481—"<Remove this unused "COUNT_EVACUATION_PLACES" local variable.(õ„‚äüÿÿÿÿ
+i
+java:S6204¤"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(â¥
+A
+java:S1481"+Remove this unused "second" local variable.(€“”
+W	java:S125©"<This block of commented-out lines of code should be removed.(§¹ôùÿÿÿÿ
+O
+java:S1854¾"8Remove this useless assignment to local variable "cars".(æèÑ’
+@
+java:S1481¾")Remove this unused "cars" local variable.(æèÑ’
+R
+java:S1854Î";Remove this useless assignment to local variable "flowers".(àÜ‚È
+C
+java:S1481Î",Remove this unused "flowers" local variable.(àÜ‚È
+@
+java:S1144,"*Remove this unused private "task1" method.(–êÎé
+@
+java:S1144@"*Remove this unused private "task2" method.(ï­›±
+@
+java:S1144R"*Remove this unused private "task3" method.(‘–Ğƒ
+@
+java:S1144f"*Remove this unused private "task4" method.(‚ŒÚğ
+@
+java:S1144y"*Remove this unused private "task5" method.(¤É´À
+A
+java:S1144Œ"*Remove this unused private "task6" method.(‡£Ï™
+F
+java:S1144"*Remove this unused private "task7" method.(ÇÊåóùÿÿÿÿ
+A
+java:S1144®"*Remove this unused private "task8" method.(¼×¥®
+F
+java:S1144Á"*Remove this unused private "task9" method.(ĞÅé‡ÿÿÿÿÿ
+B
+java:S1144Ò"+Remove this unused private "task10" method.(ñäş
+G
+java:S1144â"+Remove this unused private "task11" method.(ÅÔÑ«ùÿÿÿÿ
+G
+java:S1144ö"+Remove this unused private "task12" method.(á‘÷ƒşÿÿÿÿ
+B
+java:S1144½"+Remove this unused private "task14" method.(‹…·£
+B
+java:S1144Í"+Remove this unused private "task15" method.(Ú”Õù

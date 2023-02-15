@@ -1,0 +1,99 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,11 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: continue TASK 11">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/model/Person.java" afterDir="false" />
+-    </list>
++    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: Working Task 13(4)" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -43,6 +39,17 @@
+                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                 <item name="build" type="c8890929:TasksNode$1" />
+               </path>
++              <path>
++                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
++                <item name="stream-api" type="f1a62948:ProjectNode" />
++                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
++              </path>
++              <path>
++                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
++                <item name="stream-api" type="f1a62948:ProjectNode" />
++                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
++                <item name="runtimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
++              </path>
+             </expand>
+             <select />
+           </tree_state>
+@@ -64,6 +71,7 @@
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="ProjectId" id="2LczOx99wbaxlrJCyu44WTNzBap" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+@@ -73,15 +81,15 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
+   }
+-}]]></component>
+-  <component name="RunManager" selected="Application.Main">
++}</component>
++  <component name="RunManager" selected="Gradle.stream-api [build]">
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="by.sergeev.Main" />
+       <module name="stream-api.main" />
+@@ -176,7 +184,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1676317834796</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="feat: Working Task 13(4)">
++      <created>1676395921652</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1676395921652</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -204,7 +219,10 @@
+     <MESSAGE value="feat: Next commit" />
+     <MESSAGE value="feat: Finish Task 11" />
+     <MESSAGE value="feat: Finish Task 12" />
+-    <option name="LAST_COMMIT_MESSAGE" value="feat: Finish Task 12" />
++    <MESSAGE value="feat: Working Task 13(2)" />
++    <MESSAGE value="feat: Working Task 13(3)" />
++    <MESSAGE value="feat: Working Task 13(4)" />
++    <option name="LAST_COMMIT_MESSAGE" value="feat: Working Task 13(4)" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand />
