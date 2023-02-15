@@ -16,23 +16,21 @@ import static java.util.stream.Collectors.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-//        task1();
-//        task2();
-//        task3();
-//        task4();
-//        task5();
-//        task6();
-//        task7();
-//        task8();
-//        task9();
-//        task10();
-//        task11();
-//        task12();
-//        task13();
-//        task14();
-//        task15();
-
+        task1();
+        task2();
+        task3();
+        task4();
+        task5();
+        task6();
+        task7();
+        task8();
+        task9();
+        task10();
+        task11();
+        task12();
+        task13();
         task14();
+        task15();
     }
 
     /*
@@ -365,12 +363,12 @@ public class Main {
                 .filter(car -> car.getVin().contains("59"))
                 .toList();
 
-        List<Integer> totalMass = Stream.of(eschelon1, eschelon2, eschelon3, eschelon4, eschelon5, eschelon6)
+        List<Integer> eschelonMass = Stream.of(eschelon1, eschelon2, eschelon3, eschelon4, eschelon5, eschelon6)
                 .map(esch -> esch.stream().map(Car::getMass)
                         .reduce(Integer::sum)
                         .orElse(0))
                 .toList();
-        Double totalPrice = totalMass.forEach(x -> (x * 7.14d));
+//        Double totalMass = eschelonMass.stream().reduce(Double::sum).orElse(0);
 
     }
 
