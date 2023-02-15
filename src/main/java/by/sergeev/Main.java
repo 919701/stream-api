@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import static java.lang.System.out;
 import static java.util.Comparator.comparing;
@@ -31,7 +32,7 @@ public class Main {
 //        task14();
 //        task15();
 
-        task13();
+        task14();
     }
 
     /*
@@ -316,14 +317,15 @@ public class Main {
         List<Car> cars = Util.getCars();
         out.println("\nTask 14:");
 
-        List<Car> tm = cars.stream()
+        List<Car> eschelon1 = cars.stream()
                 .filter(car -> "Jaguar".equalsIgnoreCase(car.getCarMake())
                         || "White".equalsIgnoreCase(car.getColor()))
                 .toList();
+        int totalMass1 = eschelon1.stream().map(Car::getMass).reduce(Integer::sum).orElse(0);
 
-        cars.removeAll(tm);
+//        cars.removeAll(eschelon1);
 
-        List<Car> uz = cars.stream()
+        List<Car> eschelon2 = cars.stream()
                 .filter(car -> 1500 > car.getMass())
                 .filter(car -> "BMW".equalsIgnoreCase(car.getCarMake())
                         || "Lexus".equalsIgnoreCase(car.getCarMake())
@@ -331,25 +333,25 @@ public class Main {
                         || "Toyota".equalsIgnoreCase(car.getCarMake()))
                 .toList();
 
-        cars.removeAll(uz);
+//        cars.removeAll(eschelon2);
 
-        List<Car> kz = cars.stream()
+        List<Car> eschelon3 = cars.stream()
                 .filter(car -> ("Black".equalsIgnoreCase(car.getColor()) && 4000 < car.getMass())
                         || "GMC".equalsIgnoreCase(car.getCarMake())
                         || "Dodge".equalsIgnoreCase(car.getCarMake()))
                 .toList();
 
-        cars.removeAll(kz);
+//        cars.removeAll(eschelon3);
 
-        List<Car> kiz = cars.stream()
+        List<Car> eschelon4 = cars.stream()
                 .filter(car -> car.getReleaseYear() < 1982
                         || "Civic".equalsIgnoreCase(car.getCarModel())
                         || "Cherokee".equalsIgnoreCase(car.getCarModel()))
                 .toList();
 
-        cars.removeAll(kiz);
+//        cars.removeAll(eschelon4);
 
-        List<Car> ru = cars.stream()
+        List<Car> eschelon5 = cars.stream()
                 .filter(car -> (!car.getColor().equalsIgnoreCase("Yellow")
                         && !"Red".equalsIgnoreCase(car.getColor())
                         && !"Green".equalsIgnoreCase(car.getColor())
@@ -357,14 +359,19 @@ public class Main {
                         || 40_000 < car.getPrice())
                 .toList();
 
-        cars.removeAll(ru);
+//        cars.removeAll(eschelon5);
 
-        List<Car> mn = cars.stream()
+        List<Car> eschelon6 = cars.stream()
                 .filter(car -> car.getVin().contains("59"))
                 .toList();
 
+        List<Integer> totalMass = Stream.of(eschelon1, eschelon2, eschelon3, eschelon4, eschelon5, eschelon6)
+                .map(esch -> esch.stream().map(Car::getMass)
+                        .reduce(Integer::sum)
+                        .orElse(0))
+                .toList();
+        Double totalPrice = totalMass.forEach(x -> (x * 7.14d));
 
-        out.println("*********NULL");
     }
 
     /*
