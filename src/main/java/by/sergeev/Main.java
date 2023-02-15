@@ -321,8 +321,6 @@ public class Main {
                 .toList();
         int totalMass1 = eschelon1.stream().map(Car::getMass).reduce(Integer::sum).orElse(0);
 
-//        cars.removeAll(eschelon1);
-
         List<Car> eschelon2 = cars.stream()
                 .filter(car -> car.getMass() < 1500)
                 .filter(car -> car.getCarMake().equalsIgnoreCase("BMW")
@@ -331,23 +329,17 @@ public class Main {
                         || car.getCarMake().equalsIgnoreCase("Toyota"))
                 .toList();
 
-//        cars.removeAll(eschelon2);
-
         List<Car> eschelon3 = cars.stream()
                 .filter(car -> (car.getColor().equalsIgnoreCase("Black") && car.getMass() > 4000)
                         || car.getCarMake().equalsIgnoreCase("GMC")
                         || car.getCarMake().equalsIgnoreCase("Dodge"))
                 .toList();
 
-//        cars.removeAll(eschelon3);
-
         List<Car> eschelon4 = cars.stream()
                 .filter(car -> car.getReleaseYear() < 1982
                         || car.getCarModel().equalsIgnoreCase("Civic")
                         || car.getCarModel().equalsIgnoreCase("Cherokee"))
                 .toList();
-
-//        cars.removeAll(eschelon4);
 
         List<Car> eschelon5 = cars.stream()
                 .filter(car -> (!"Yellow".equalsIgnoreCase(car.getColor())
@@ -356,8 +348,6 @@ public class Main {
                         && !car.getColor().equalsIgnoreCase("Blue"))
                         || car.getPrice() > 40_000)
                 .toList();
-
-//        cars.removeAll(eschelon5);
 
         List<Car> eschelon6 = cars.stream()
                 .filter(car -> car.getVin().contains("59"))
