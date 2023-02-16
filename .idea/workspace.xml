@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: continue TASK 13 (new)">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_02_2023_20_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_02_2023_20_15__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_19_58__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_19_58__Changes_.xml" afterDir="false" />
+    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: End TASK 15">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" afterDir="false" />
     </list>
@@ -197,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676378775962</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: End TASK 15">
+      <created>1676521696780</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676521696780</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +244,8 @@
     <MESSAGE value="feat: Finish Task 12" />
     <MESSAGE value="feat: continue TASK 13" />
     <MESSAGE value="feat: continue TASK 13 (new)" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: continue TASK 13 (new)" />
+    <MESSAGE value="feat: End TASK 15" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: End TASK 15" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

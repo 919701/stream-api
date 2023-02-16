@@ -353,12 +353,12 @@ public class Main {
                 .filter(car -> car.getVin().contains("59"))
                 .toList();
 
-//        Integer eschelonMass = Stream.of(eschelon1, eschelon2, eschelon3, eschelon4, eschelon5, eschelon6)
-//                .map(esch -> esch.stream()
-//                        .map(Car::getMass)
-//                        .reduce(Integer::sum))
-//                .sum();
-//        Double totalMass = eschelonMass.stream().;
+        Stream.of(eschelon1, eschelon2, eschelon3, eschelon4, eschelon5, eschelon6)
+                .flatMap(eshelon -> eshelon.stream()
+                        .map(Car::getMass))
+                .reduce(Integer::sum)
+                .ifPresent(m -> out.println("Total mass:" + m));
+
 
     }
 
