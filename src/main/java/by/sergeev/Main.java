@@ -69,8 +69,8 @@ public class Main {
 
         animals.stream()
                 .filter(animal -> animal.getOrigin().equalsIgnoreCase(BY_ORIGIN))
-                .filter(animal -> animal.getGender().equalsIgnoreCase(BY_GENDER))
-                .peek(animal -> animal.setBread(animal.getBread().toUpperCase()))
+                .map(animal -> animal.getGender().equalsIgnoreCase(BY_GENDER)
+                        ? animal.getBread().toUpperCase() : animal.getBread())
                 .forEach(out::println);
     }
 
@@ -353,12 +353,11 @@ public class Main {
                 .filter(car -> car.getVin().contains("59"))
                 .toList();
 
-        List<Integer> eschelonMass = Stream.of(eschelon1, eschelon2, eschelon3, eschelon4, eschelon5, eschelon6)
-                .map(esch -> esch.stream()
-                        .map(Car::getMass)
-                        .reduce(Integer::sum)
-                        .orElse(0))
-                .toList();
+//        Integer eschelonMass = Stream.of(eschelon1, eschelon2, eschelon3, eschelon4, eschelon5, eschelon6)
+//                .map(esch -> esch.stream()
+//                        .map(Car::getMass)
+//                        .reduce(Integer::sum))
+//                .sum();
 //        Double totalMass = eschelonMass.stream().;
 
     }

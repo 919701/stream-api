@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: working Task 14">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="6c866e7f-b2b3-4b6d-9ab8-080cb2df6c3f" name="Changes" comment="feat: continue TASK 13 (new)">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_02_2023_20_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_02_2023_20_15__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_19_58__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_02_2023_19_58__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/sergeev/Main.java" afterDir="false" />
     </list>
@@ -69,7 +65,11 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LczOx99wbaxlrJCyu44WTNzBap" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -84,7 +84,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RunManager" selected="Application.Main">
@@ -160,6 +160,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676185131249</updated>
       <workItem from="1676185135661" duration="72000" />
+      <workItem from="1676451368835" duration="14383000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Next commit">
       <created>1676306111384</created>
@@ -182,42 +183,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676317834796</updated>
     </task>
-    <task id="LOCAL-00004" summary="feat: del Task 13">
-      <created>1676481262870</created>
+    <task id="LOCAL-00004" summary="feat: continue TASK 13">
+      <created>1676378538226</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1676481262870</updated>
+      <updated>1676378538226</updated>
     </task>
-    <task id="LOCAL-00005" summary="feat: Final Task 13">
-      <created>1676482492750</created>
+    <task id="LOCAL-00005" summary="feat: continue TASK 13 (new)">
+      <created>1676378775962</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1676482492750</updated>
+      <updated>1676378775962</updated>
     </task>
-    <task id="LOCAL-00006" summary="feat: working Task 14">
-      <created>1676486018942</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1676486018942</updated>
-    </task>
-    <task id="LOCAL-00007" summary="feat: working Task 14">
-      <created>1676490510244</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1676490510244</updated>
-    </task>
-    <task id="LOCAL-00008" summary="feat: working Task 14">
-      <created>1676490787689</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1676490787689</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +213,19 @@
         </entry>
         <entry key="b3c75c8c-329e-469e-9ea3-17d4971b6113">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -245,10 +237,9 @@
     <MESSAGE value="feat: Next commit" />
     <MESSAGE value="feat: Finish Task 11" />
     <MESSAGE value="feat: Finish Task 12" />
-    <MESSAGE value="feat: del Task 13" />
-    <MESSAGE value="feat: Final Task 13" />
-    <MESSAGE value="feat: working Task 14" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: working Task 14" />
+    <MESSAGE value="feat: continue TASK 13" />
+    <MESSAGE value="feat: continue TASK 13 (new)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: continue TASK 13 (new)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
